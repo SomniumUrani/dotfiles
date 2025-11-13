@@ -1,7 +1,7 @@
 # Dotfiles
 Hi, just ignore the AI comments.
 
-[desktop](desktop.png)
+![desktop](desktop.png)
 
 ## Requeriments
 This is a hyprland + waybar classic desktop with
