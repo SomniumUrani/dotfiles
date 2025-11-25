@@ -27,6 +27,12 @@ alias suntar="tar -xvf"
 alias ff="fastfetch"
 alias cl="clear"
 alias sesp=". $HOME/esp/esp-idf/export.sh"
+alias gl="glow"
+alias sgba="source /etc/profile.d/devkit-env.sh"
+
+# ESP idf specific alias
+alias ebuild="idf.py build"
+alias eflash="idf.py flash"
 
 function ctouch() {
   for file in "$@"; do
@@ -63,6 +69,27 @@ short_pwd() {
   echo ${PWD/#\/home\/yhaksnes/home}
 }
 
+function note() {
+    local BASE_DIR="$HOME/me"
+    
+    local YEAR=$(date +%Y)
+    local MONTH=$(date +%m)
+    local DAY=$(date +%Y-%m-%d)
+    local TIME=$(date +%H%M)
+    
+    local TARGET_DIR="$BASE_DIR/$YEAR/$MONTH"
+    mkdir -p "$TARGET_DIR"
+    
+    if [ -z "$1" ]; then
+        local FILENAME="${DAY}_${TIME}.md"
+    else
+        local SLUG=$(echo "$*" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+        local FILENAME="${DAY}-${SLUG}.md"
+    fi
+    
+    nvim + "$TARGET_DIR/$FILENAME"
+}
+
 autoload -U colors && colors
 
 setopt prompt_subst
@@ -86,7 +113,11 @@ export KEYTIMEOUT=1
 #PATHS
 export PATH="$HOME/.local/bin:$PATH"
 export STDLIBS=/usr/include
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
 
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 

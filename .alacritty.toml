@@ -20,20 +20,25 @@ mods = "Control|Shift"
 action = "CreateNewWindow"
 
 [font]
-normal.family = "Fira Code Retina"
-normal.style = "Regular"
+size = 12.0
 
-bold.family = "Fira Code Retina"
-bold.style = "Bold"
+[font.normal]
+family = "Google Sans Code"
+style = "Regular"
 
-italic.family = "Fira Code Retina"
-italic.style = "Italic"
+[font.bold]
+family = "Google Sans Code"
+style = "Bold"
 
-bold_italic.family = "Fira Code Retina"
-bold_italic.style = "Bold Italic"
+[font.italic]
+family = "Google Sans Code"
+style = "Italic"
 
-# Enable/disable font rendering options that affect visual precision
-builtin_box_drawing = true  # important for box/line drawing characters
-offset = { x = 0, y = 0 }   # pixel offset within glyph bounding box
-glyph_offset = { x = 0, y = 0 }  # internal glyph shift
+[font.bold_italic]
+family = "Google Sans Code"
+style = "Bold Italic"
+
+# [font.offset]
+# x = 0
+# y = 1
 
