@@ -18,7 +18,7 @@ alias sremove="sudo pacman -Rn"
 alias sfullremove="sudo pacman -Rns"
 alias sdangerremove="sudo pacman -Rsc"
 alias spi="ping 1.1.1.1"
-alias ls='ls --color=auto -p'
+alias ls='lsd'
 alias srm="shred -n 0 -z -u"
 alias sdev="make --no-print-directory dev"
 alias szsource="source ~/.zshrc"
@@ -29,6 +29,9 @@ alias cl="clear"
 alias sesp=". $HOME/esp/esp-idf/export.sh"
 alias gl="glow"
 alias sgba="source /etc/profile.d/devkit-env.sh"
+
+alias opdf="zathura"
+alias oimage="imv"
 
 # ESP idf specific alias
 alias ebuild="idf.py build"

@@ -28,7 +28,7 @@ style = "Regular"
 
 [font.bold]
 family = "Google Sans Code"
-style = "Bold"
+style = "SemiBold"
 
 [font.italic]
 family = "Google Sans Code"
@@ -36,7 +36,7 @@ style = "Italic"
 
 [font.bold_italic]
 family = "Google Sans Code"
-style = "Bold Italic"
+style = "SemiBold Italic"
 
 # [font.offset]
 # x = 0
