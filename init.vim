@@ -131,4 +131,22 @@ end
 
 vim.opt.clipboard = "unnamedplus"
 
+-- Configuración para Python (Pyright)
+vim.lsp.config('pyright', {
+  cmd = { "pyright-langserver", "--stdio" },
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "workspace",
+      }
+    }
+  }
+})
+
+vim.lsp.enable('pyright')
+
 EOF

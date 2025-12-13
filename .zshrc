@@ -29,9 +29,12 @@ alias cl="clear"
 alias sesp=". $HOME/esp/esp-idf/export.sh"
 alias gl="glow"
 alias sgba="source /etc/profile.d/devkit-env.sh"
+alias mgba="mgba-qt"
 
 alias opdf="zathura"
 alias oimage="imv"
+
+alias battery.py="python3 ~/scripts/battery.py"
 
 # ESP idf specific alias
 alias ebuild="idf.py build"
