@@ -30,6 +30,9 @@ alias sesp=". $HOME/esp/esp-idf/export.sh"
 alias gl="glow"
 alias sgba="source /etc/profile.d/devkit-env.sh"
 alias mgba="mgba-qt"
+function nohup(){
+	command nohup $@ > /dev/null 2>&1 &
+}
 
 alias opdf="zathura"
 alias oimage="imv"
