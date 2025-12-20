@@ -30,7 +30,7 @@ alias sesp=". $HOME/esp/esp-idf/export.sh"
 alias gl="glow"
 alias sgba="source /etc/profile.d/devkit-env.sh"
 alias mgba="mgba-qt"
-function nohup(){
+function np(){
 	command nohup $@ > /dev/null 2>&1 &
 }
 
@@ -126,7 +126,6 @@ export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 
-
+source "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
