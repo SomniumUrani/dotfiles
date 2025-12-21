@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cp ~/.zshrc .
 cp ~/.config/nvim/init.vim .
 cp ~/.alacritty.toml .

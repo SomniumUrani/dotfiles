@@ -37,8 +37,6 @@ function np(){
 alias opdf="zathura"
 alias oimage="imv"
 
-alias battery.py="python3 ~/scripts/battery.py"
-
 # ESP idf specific alias
 alias ebuild="idf.py build"
 alias eflash="idf.py flash"
@@ -125,6 +123,7 @@ export STDLIBS=/usr/include
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
+export PATH="$HOME/scripts:$PATH"
 
 source "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
