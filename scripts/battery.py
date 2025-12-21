@@ -16,7 +16,7 @@ def statf():
 
 match sys.argv[1]:
     case "charge":
-        statstr = statf
+        statstr = statf()
         argument_string = [line for line in statstr.splitlines() if "Charge" in line]
 
         print('Internal Battery Charge\t', argument_string[0][tlp_line_spacing:])
@@ -33,7 +33,8 @@ match sys.argv[1]:
                 os.system("sudo tlp fullcharge")
     case "status":
         if sys.argv[2] == "suckless":
-            argument_string = [line for line in argument_string.splitlines() if "Charge" in line]
+            statstr = statf()
+            argument_string = [line for line in statstr.splitlines() if "Charge" in line]
         else:
             os.system("sudo tlp-stat -b")
     
