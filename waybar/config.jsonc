@@ -12,10 +12,8 @@
     "modules-right": [
         "network",
         "battery",
-        // "backlight" eliminado de aquí
         "bluetooth",
         "pulseaudio",
-        "temperature",
         "memory",
         "cpu",
         "clock"
@@ -83,13 +81,6 @@
         "tooltip": true,
         "tooltip-format": "Volumen: {volume}%"
     },
-    "temperature": {
-        "critical-threshold": 80,
-        // Eliminado el <span color='#FFA500'>
-        "format": "  {temperatureC}°C ",
-        "tooltip": true,
-        "tooltip-format": "Temp CPU: {temperatureC}°C"
-    },
     "memory": {
         "format": "<span color='#8A2BE2'>     </span>{used:0.1f}G/{total:0.1f}G ",
         "tooltip": true,
@@ -113,7 +104,7 @@
     "bluetooth": {
         "format": "<span color='#00BFFF'>  </span>{status} ",
         "format-connected": "<span color='#00BFFF'>  </span>{device_alias} ",
-        "format-connected-battery": "<span color='#00BFFF'>  </span>{device_alias} {device_battery_percentage}% ",
+        "format-connected-battery": "<span color='#00BFFF'>  </span> {device_battery_percentage}% ",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
