@@ -1,14 +1,10 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/yhaksnes/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 alias nv="nvim"
 alias py="python3"
@@ -19,27 +15,17 @@ alias sfullremove="sudo pacman -Rns"
 alias sdangerremove="sudo pacman -Rsc"
 alias spi="ping 1.1.1.1"
 alias ls='lsd'
-alias srm="shred -n 0 -z -u"
-alias sdev="make --no-print-directory dev"
 alias szsource="source ~/.zshrc"
 alias spysource="echo todo"
 alias suntar="tar -xvf"
 alias ff="fastfetch"
 alias cl="clear"
 alias sesp=". $HOME/esp/esp-idf/export.sh"
-alias gl="glow"
 alias sgba="source /etc/profile.d/devkit-env.sh"
 alias mgba="mgba-qt"
 function np(){
 	command nohup $@ > /dev/null 2>&1 &
 }
-
-alias opdf="zathura"
-alias oimage="imv"
-
-# ESP idf specific alias
-alias ebuild="idf.py build"
-alias eflash="idf.py flash"
 
 function ctouch() {
   for file in "$@"; do
@@ -57,12 +43,7 @@ function sresume(){
 # Git stuff
 alias scom="git commit -m"
 alias sadd="git add ."
-function srun {
-	mkdir -p .tmp
-	gcc -o .tmp/program $1 && \
-		./.tmp/program
-	rm -rf .tmp/
-}
+alias push="git push"
 alias schange="sadd && scom"
 
 
@@ -70,7 +51,12 @@ alias schange="sadd && scom"
 function spdf() {
     pandoc "$1" -o "${1%.*}.pdf" -V geometry="margin=2cm"
 }
-
+function srun {
+	mkdir -p .tmp
+	gcc -o .tmp/program $1 && \
+		./.tmp/program
+	rm -rf .tmp/
+}
 
 short_pwd() {
   echo ${PWD/#\/home\/yhaksnes/home}
