@@ -9,14 +9,14 @@ if len(sys.argv) < 2:
 
 match sys.argv[1]:
     case "night":
-        if len(sys.argv) == 3:
-            if sys.argv[2] == "kill":
-                os.system("kill $(pgrep hyprsunset)") 
+        arg2 = sys.argv[2] if len(sys.argv) > 2 else None
 
-        if len(sys.argv) < 3:
-            os.system("nohup hyprsunset -t 2500 > /dev/null 2>&1 & ")
+        if sys.argv[2] == "kill":
+            os.system("kill $(pgrep hyprsunset)") 
+        elif arg2 is None or not arg2.isdigit():
+            os.system("nohup hyprsunset -t 1500 > /dev/null 2>&1 & ")
         else:
-            os.system("nohup hyprsunset -t  > /dev/null 2>&1 & " + sys.argv[2])
+            os.system(f"nohup hyprsunset -t {arg2} > /dev/null 2>&1 & ")
     case _:
         print(arguments_message)
 

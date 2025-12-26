@@ -14,7 +14,8 @@ alias sremove="sudo pacman -Rn"
 alias sfullremove="sudo pacman -Rns"
 alias sdangerremove="sudo pacman -Rsc"
 alias spi="ping 1.1.1.1"
-alias ls='lsd'
+alias ls='lsd -I "compile_commands.json"'
+alias la='lsd -a'
 alias szsource="source ~/.zshrc"
 alias spysource="echo todo"
 alias suntar="tar -xvf"
@@ -26,11 +27,36 @@ alias mgba="mgba-qt"
 function np(){
 	command nohup $@ > /dev/null 2>&1 &
 }
+function localai(){
+    local SD_PATH="/run/media/yhaksnes/EB0D-77A1/models"
+    export OLLAMA_MODELS="$SD_PATH"
+
+    if pgrep -x "ollama" > /dev/null; then
+        ollama run deepseek-r1:1.5b
+    else
+        
+        ollama serve > /dev/null 2>&1 &
+        local SERVER_PID=$! 
+		trap "kill $SERVER_PID 2>/dev/null" EXIT
+
+        while ! curl -s localhost:11434 > /dev/null; do   
+          sleep 1
+        done
+
+        ollama run deepseek-r1:1.5b
+
+        kill $SERVER_PID
+        trap - EXIT 
+    fi
+}
 
 function ctouch() {
   for file in "$@"; do
     touch "${file}.h" "${file}.c"
   done
+}
+function crun(){
+    gcc "${1%.*}" -o $1 && ./"${1%.*}"
 }
 
 function spause(){
@@ -47,7 +73,6 @@ alias push="git push"
 alias schange="sadd && scom"
 
 
-# Añade esto a tu ~/.zshrc
 function spdf() {
     pandoc "$1" -o "${1%.*}.pdf" -V geometry="margin=2cm"
 }

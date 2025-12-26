@@ -20,10 +20,12 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'vim-scripts/a.vim'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'https://codeberg.org/ziglang/zig.vim'
 
 call plug#end()
 
@@ -39,10 +41,9 @@ colorscheme moonfly
 lua require'colorizer'.setup()
 lua require("autoclose").setup()
 
-
-
-" Enable filetype plugins
 filetype plugin on
+
+let g:zig_fmt_autosave = 0
 
 lua << EOF
 local cmp = require('cmp')
@@ -148,5 +149,21 @@ vim.lsp.config('pyright', {
 })
 
 vim.lsp.enable('pyright')
+
+-- Zig (ZLS) Configuration
+vim.lsp.config('zls', {
+  cmd = { "zls" },
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    zls = {
+      -- Hint: Set this to true if you want parameter names shown in your code
+      enable_inlay_hints = true,
+      warn_style = true,
+    }
+  }
+})
+
+vim.lsp.enable('zls')
 
 EOF
