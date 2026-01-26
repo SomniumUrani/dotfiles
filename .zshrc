@@ -6,6 +6,7 @@ zstyle :compinstall filename '/home/yhaksnes/.zshrc'
 autoload -Uz compinit
 compinit
 
+alias cdw="cd ~/workspace/"
 alias nv="nvim"
 alias py="python3"
 alias supdate="sudo pacman -Syu"
@@ -24,6 +25,7 @@ alias cl="clear"
 alias sesp=". $HOME/esp/esp-idf/export.sh"
 alias sgba="source /etc/profile.d/devkit-env.sh"
 alias mgba="mgba-qt"
+alias bstatus="sudo tlp-stat -b"
 function np(){
 	command nohup $@ > /dev/null 2>&1 &
 }
