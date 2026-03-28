@@ -1,11 +1,8 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-zstyle :compinstall filename '/home/yhaksnes/.zshrc'
 
-autoload -Uz compinit
-compinit
-
+alias super="sudo zsh"
 alias cdw="cd ~/workspace/"
 alias nv="nvim"
 alias py="python3"
@@ -26,6 +23,9 @@ alias sesp=". $HOME/esp/esp-idf/export.sh"
 alias sgba="source /etc/profile.d/devkit-env.sh"
 alias mgba="mgba-qt"
 alias bstatus="sudo tlp-stat -b"
+alias srpi="ssh urani@192.168.100.134"
+alias sserial="tio /dev/ttyUSB0"
+alias ssize="du -sh"
 function np(){
 	command nohup $@ > /dev/null 2>&1 &
 }
@@ -123,7 +123,7 @@ PS1=$'%{\e[1m\e[38;2;150;0;150m%}$(short_pwd)%{\e[0m%}\n%{\e[1m\e[38;2;129;34;25
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -C
 _comp_options+=(globdots)		# Include hidden files.
 
 
@@ -140,4 +140,12 @@ export PATH="$HOME/scripts:$PATH"
 
 source "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+function sssh() {
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+    fi
+}
 

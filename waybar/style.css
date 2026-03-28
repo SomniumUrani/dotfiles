@@ -1,13 +1,17 @@
 * {
-  border: none;
-  border-radius: 0px;
-  /* `ttf-font-awesome` is required to be installed for icons */
-  font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+    /* Se requiere tener instalada la fuente "Google Sans Code" en el sistema */
+    font-family: "Google Sans Code", Helvetica, Arial, sans-serif;
 
-  /* adjust font-size value to your liking: */
-  font-size: 10px;
+    /* Si prefieres que todo el texto use el peso SemiBold por defecto, 
+       descomenta la siguiente línea (600 suele ser SemiBold): */
+    /* font-weight: 600; */
 
-  min-height: 0;
+    /* adjust font-size value to your liking: */
+    font-size: 10px;
+
+    min-height: 0;
 }
 
 window#waybar {

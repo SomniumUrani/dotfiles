@@ -9,7 +9,6 @@
     "modules-right": [
         "network",
         "battery",
-        "bluetooth",
         "pulseaudio",
         "memory",
         "cpu",
@@ -22,11 +21,11 @@
         "on-click": "activate"
     },
     "network": {
-        "format-wifi": "<span color='#00FFFF'> 󰤨    </span>{essid} ",
+        "format-wifi": "<span color='#00FFFF'> 󰤨</span> ",
         "format-ethernet": "<span color='#7FFF00'>      </span>Wired ",
         "tooltip-format": "<span color='#FF1493'> 󰅧      </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢      </span>{bandwidthDownBytes}",
         "format-linked": "<span color='#FFA500'> 󱘖      </span>{ifname} (No IP) ",
-        "format-disconnected": "<span color='#FF4040'>       </span>Disconnected ",
+        "format-disconnected": "<span color='#FF4040'>       </span> ",
         "format-alt": "<span color='#00FFFF'> 󰤨      </span>{signalStrength}% ",
         "interval": 1
     },
@@ -35,15 +34,15 @@
             "warning": 35,
             "critical": 25
         },
-        "format": "<span color='#28CD41'> {icon}  </span>{capacity}% ",
-        "format-charging": " 󱐋 {capacity}%",
+        "format": "<span color='#28CD41'> {icon}  </span>{capacity}",
+        "format-charging": " 󱐋 {capacity}",
         "interval": 1,
         "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
         "tooltip": true
     },
     "pulseaudio": {
-        "format": "<span color='#00FF7F'>{icon} </span>{volume}% ",
-        "format-muted": "<span color='#FF4040'> 󰖁 </span>0% ",
+        "format": "<span color='#00FF7F'>{icon} </span>{volume}",
+        "format-muted": "<span color='#FF4040'> 󰖁 </span>0 ",
         "format-icons": {
             "headphone": "<span color='#BF00FF'>  </span>",
             "hands-free": "<span color='#BF00FF'>  </span>",
@@ -52,9 +51,9 @@
             "portable": "<span color='#00FFFF'>  </span>",
             "car": "<span color='#FFA500'>  </span>",
             "default": [
-                "<span color='#808080'>   </span>",
-                "<span color='#FFFF66'>   </span>",
-                "<span color='#00FF7F'>   </span>"
+                "<span color='#808080'>  </span>",
+                "<span color='#FFFF66'>  </span>",
+                "<span color='#00FF7F'>  </span>"
             ]
         },
         "on-click-right": "pavucontrol -t 3",
@@ -63,18 +62,18 @@
         "tooltip-format": "Volumen: {volume}%"
     },
     "memory": {
-        "format": "<span color='#8A2BE2'>     </span>{used:0.1f}G/{total:0.1f}G ",
+        "format": "<span color='#8A2BE2'>  </span>{used}",
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.2f}G usados de {total:0.2f}G"
     },
     "cpu": {
-        "format": "<span color='#FF9F0A'>    </span>{usage}% ",
+        "format": "<span color='#FF9F0A'>  </span>{usage}",
         "tooltip": true
     },
     "clock": {
         "interval": 1,
         "timezone": "America/Monterrey",
-        "format": "<span color='#BF00FF'>    </span>{:%H:%M} ",
+        "format": "<span color='#BF00FF'>  </span>{:%H:%M} ",
         "tooltip": true,
         "tooltip-format": "{:%A, %d de %B de %Y}"
     },
@@ -82,13 +81,5 @@
         "icon-size": 17,
         "spacing": 6
     },
-    "bluetooth": {
-        "format": "<span color='#00BFFF'>  </span>{status} ",
-        "format-connected": "<span color='#00BFFF'>  </span>{device_alias} ",
-        "format-connected-battery": "<span color='#00BFFF'>  </span> {device_battery_percentage}% ",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-    }
+
 }
