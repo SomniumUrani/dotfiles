@@ -13,6 +13,11 @@ Configuration files: https://github.com/SomniumUrani/dotfiles
 **Alacritty**
 - Config: ~/.alacritty.toml
 
+**Screenshots**
+- Package: `slurp`
+- SS to clipboard: `grim -g "$(slurp)" - | wl-copy`
+- SS to disk: `grim -g "$(slurp)" ~/normieStuff/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S')_shot.png`
+
 ## Other stuff
 **Network Manager**
 - Config: `nmtui`
@@ -32,6 +37,9 @@ Configuration files: https://github.com/SomniumUrani/dotfiles
 - Clean tools: `paccache`
 - Remove things: `sudo paccache -r`
 - Remove unused packages: `sudo pacman -Rs $(pacman -Qtdq)`
+
+**SDDM*
+- Themes: /usr/share/sddm/themes/
 
 ## Cheatsheet
 - Dir size: `du -sh`

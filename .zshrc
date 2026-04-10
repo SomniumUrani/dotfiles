@@ -1,6 +1,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+source ~/.encryption
 
 alias super="sudo zsh"
 alias cdw="cd ~/workspace/"
@@ -8,8 +9,7 @@ alias nv="nvim"
 alias py="python3"
 alias supdate="sudo pacman -Syu"
 alias sinstall="sudo pacman -S"
-alias sremove="sudo pacman -Rn"
-alias sfullremove="sudo pacman -Rns"
+alias sremove="sudo pacman -Rns"
 alias sdangerremove="sudo pacman -Rsc"
 alias spi="ping 1.1.1.1"
 alias ls='lsd -I "compile_commands.json"'
@@ -66,6 +66,14 @@ function spause(){
 }
 function sresume(){
 	kill -cont $(pidof $1)
+}
+
+ollama() {
+  export OLLAMA_NUM_THREADS=8
+  export OLLAMA_NUM_PARALLEL=1
+  export OLLAMA_FLASH_ATTENTION=1
+  unfunction ollama  
+  command ollama "$@"  
 }
 
 # Git stuff
