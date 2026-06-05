@@ -17,6 +17,12 @@ Configuration files: https://github.com/SomniumUrani/dotfiles
 - Package: `slurp`
 - SS to clipboard: `grim -g "$(slurp)" - | wl-copy`
 - SS to disk: `grim -g "$(slurp)" ~/normieStuff/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S')_shot.png`
+**Math**
+- GNU bc
+- Python shell
+**Power search engine SearXNG**
+- Depends on valkey.service
+- uWSGI socket is located at: /usr/local/searxng/run/socket
 
 ## Other stuff
 **Network Manager**

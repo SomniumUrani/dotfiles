@@ -60,7 +60,7 @@ require("lazy").setup({
     end,
   },
 
-  { "norcalli/nvim-colorizer.lua", config = function() require("colorizer").setup() end },
+  { "Bruenor/nvim-colorizer.lua", commit = "260bc9d", config = function() require("colorizer").setup() end },
   "luochen1990/rainbow",
   { "m4xshen/autoclose.nvim", config = true },
   "tommcdo/vim-lion",
@@ -95,7 +95,7 @@ require("lazy").setup({
     end,
   },
 
-  {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
+  {"nvim-treesitter/nvim-treesitter", branch = 'main', lazy = false, build = ":TSUpdate"},
 
   {
     "neovim/nvim-lspconfig",
@@ -174,7 +174,7 @@ map('n', '<C-f>', ':NvimTreeFindFile<CR>', { silent = true, desc = "Find file in
 
 
 
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
 	ensure_installed = {"c", "bash", "lua", "markdown"},
 	highlight = {
 		enable = true

@@ -1,0 +1,27 @@
+{
+    "filament_cost": [
+        "300"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "filament_settings_id": [
+        "MyFilamentPLA"
+    ],
+    "from": "User",
+    "hot_plate_temp": [
+        "65"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "70"
+    ],
+    "inherits": "Creality Generic PLA",
+    "name": "MyFilamentPLA",
+    "nozzle_temperature": [
+        "200"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "200"
+    ],
+    "version": "2.3.2.60"
+}
