@@ -145,6 +145,7 @@ export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export PATH="$HOME/scripts:$PATH"
+export CC=/usr/bin/gcc
 
 source "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
